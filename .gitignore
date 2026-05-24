@@ -1,0 +1,198 @@
+# ============================================================================
+# Java
+# ============================================================================
+# Compiled class files
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+deployment.properties
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ============================================================================
+# Node.js
+# ============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ============================================================================
+# Python
+# ============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+.eggs/
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.coverage.*
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Poetry
+poetry.lock
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ============================================================================
+# Go
+# ============================================================================
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+*.out
+
+# Go workspace
+go.work
+go.work.sum
+
+# Vendor (optional: uncomment if you don't want to commit vendor)
+# vendor/
+
+# Binary output directories
+bin/
+pkg/
+
+# ============================================================================
+# Build outputs
+# ============================================================================
+dist/
+build/
+out/
+*.apk
+*.ipa
+
+# ============================================================================
+# IDE
+# ============================================================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code (optional: uncomment if you don't want to share settings)
+# .vscode/
+
+# ============================================================================
+# OS generated files
+# ============================================================================
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+*~
+
+# ============================================================================
+# Log files
+# ============================================================================
+*.log
+logs/
+
+# ============================================================================
+# Database
+# ============================================================================
+*.sqlite
+*.sqlite3
+*.db
+
+# ============================================================================
+# Docker
+# ============================================================================
+# Uncomment if you generate local Docker volumes or secrets
+# docker-compose.override.yml
+
+# ============================================================================
+# CI/CD / DevOps tools
+# ============================================================================
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Ansible
+*.retry
+
+# Kubernetes
+*.kubeconfig
+kubeconfig
+
+# Helm
+*.tgz
+
+# SonarQube
+.sonar/
+sonar-project.properties
+
+# Jenkins
+.jenkins/
+
+# GitLab CI local runner
+.gitlab-ci-local/
+
+# Local secrets (DO NOT commit real secrets)
+secrets/
+*.pem
+*.key
+*.crt

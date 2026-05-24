@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "Ops Fault Lab",
+    "_postman_id": "b4232808-8589-48f3-9765-b8feef1f0001",
+    "description": "故障演练平台 API 集合",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Scenarios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/scenarios",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "scenarios"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Trigger Heap OOM",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"operator\": \"ops_user\",\n  \"extras\": {\n    \"blocks\": 16\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/scenarios/heap-oom/trigger",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "scenarios",
+            "heap-oom",
+            "trigger"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Stop Heap OOM",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"operator\": \"ops_user\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/scenarios/heap-oom/stop",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "scenarios",
+            "heap-oom",
+            "stop"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api"
+    }
+  ]
+}

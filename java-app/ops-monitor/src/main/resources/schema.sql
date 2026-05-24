@@ -40,5 +40,10 @@ CREATE TABLE IF NOT EXISTS server_metrics (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 插入默认管理员用户 (密码: admin，BCrypt 加密)
+-- 注: 应用启动时 DataInitializer 会自动检测并修复密码，此处仅供参考
 INSERT IGNORE INTO users (username, password, role) VALUES
 ('admin', '$2a$10$N.zJ5dR7PzWfwB8s6C9u.OF0z9z5z5z5z5z5z5z5z5z5z5z5z5z5z5z', 'ADMIN');
+
+-- 插入默认本地服务器（供 SystemMetricsCollector 采集指标使用）
+INSERT IGNORE INTO servers (id, name, host, os, status) VALUES
+(1, 'localhost', '127.0.0.1', 'Linux', 'ONLINE');

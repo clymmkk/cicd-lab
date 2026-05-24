@@ -54,7 +54,7 @@ export default {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c3e50 100%);
 }
 
 .login-box {
@@ -95,7 +95,7 @@ export default {
   padding: 12px;
   border: none;
   border-radius: 6px;
-  background: #667eea;
+  background: #3498db;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
@@ -103,7 +103,7 @@ export default {
 }
 
 .btn-login:hover {
-  background: #5a67d8;
+  background: #2980b9;
 }
 
 .error {

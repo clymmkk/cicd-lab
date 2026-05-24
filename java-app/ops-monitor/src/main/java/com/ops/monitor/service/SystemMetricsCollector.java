@@ -1,5 +1,6 @@
 package com.ops.monitor.service;
 
+import com.ops.monitor.entity.Server;
 import com.ops.monitor.entity.ServerMetric;
 import com.ops.monitor.repository.ServerMetricRepository;
 import com.ops.monitor.repository.ServerRepository;
@@ -51,8 +52,15 @@ public class SystemMetricsCollector {
             diskUsed += (store.getTotalSpace() - store.getUsableSpace()) / 1024 / 1024;
         }
 
+        // 动态获取本地服务器 ID，避免硬编码导致外键约束失败
+        Server localServer = serverRepository.findByHost("127.0.0.1").orElse(null);
+        if (localServer == null) {
+            System.out.println("[MetricsCollector] 本地服务器未注册，跳过本次采集");
+            return;
+        }
+
         ServerMetric metric = new ServerMetric();
-        metric.setServerId(1L);
+        metric.setServerId(localServer.getId());
         metric.setCpuUsage(Math.round(cpuUsage * 100.0) / 100.0);
         metric.setMemoryUsed(memoryUsed);
         metric.setMemoryTotal(memoryTotal);
